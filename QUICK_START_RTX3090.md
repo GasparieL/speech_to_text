@@ -49,7 +49,7 @@
    python 2_finetune_whisper.py
    ```
 
-4. **Wait 8-12 hours** ☕
+4. **Wait 8-12 hours**
 
 5. **Copy model back to Mac:**
    ```bash
@@ -109,4 +109,4 @@ After fine-tuning on RTX 3090:
 "ის პარიზში ცხოვრობდა ცნობილ ვარსკვლავ სტელასთან ერთად"
 ```
 
-Much better! 🎉
+Much better!

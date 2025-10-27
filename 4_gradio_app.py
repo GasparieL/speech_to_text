@@ -87,7 +87,7 @@ def create_interface(model_path="./whisper-georgian-finetuned"):
         fn=transcriber.transcribe,
         inputs=gr.Audio(sources=["upload", "microphone"], type="numpy"),
         outputs=gr.Textbox(label="Transcription (Georgian)", lines=5),
-        title="🎙️ Georgian Speech-to-Text",
+        title="Georgian Speech-to-Text",
         description="""
         Upload an audio file or record your voice to get Georgian transcription.
 

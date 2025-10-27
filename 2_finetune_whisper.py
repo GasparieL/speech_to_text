@@ -150,7 +150,7 @@ def main():
         print(f"GPU: {torch.cuda.get_device_name(0)}")
         print(f"GPU Memory: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB")
     else:
-        print("⚠️  WARNING: No GPU detected! Training will be VERY slow.")
+        print("WARNING: WARNING: No GPU detected! Training will be VERY slow.")
 
     # Load dataset
     print("\n1. Preparing dataset...")
@@ -234,7 +234,7 @@ def main():
     trainer.save_model(OUTPUT_DIR)
     processor.save_pretrained(OUTPUT_DIR)
 
-    print(f"\n✓ Training complete! Model saved to {OUTPUT_DIR}")
+    print(f"\nOK: Training complete! Model saved to {OUTPUT_DIR}")
     print("\nYou can now use the model for transcription with:")
     print(f"  python transcribe.py --model {OUTPUT_DIR} --audio your_audio.mp3")
 

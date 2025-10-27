@@ -2,17 +2,17 @@
 
 Perfect! With an RTX 3090, you can train efficiently on your local machine.
 
-## ⚡ Expected Training Times (RTX 3090)
+## Expected Training Times (RTX 3090)
 
 | Model | Training Time | Accuracy | Recommended |
 |-------|---------------|----------|-------------|
 | whisper-tiny | 2-3 hours | Good | Quick testing |
 | whisper-base | 4-6 hours | Better | Testing |
-| **whisper-small** | **8-12 hours** | **Excellent** | ⭐ **Best choice** |
+| **whisper-small** | **8-12 hours** | **Excellent** | **Best choice** |
 | whisper-medium | 20-30 hours | Best | If you have time |
 | whisper-large-v3 | 40-50 hours | Best+ | Maximum accuracy |
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### Step 1: Transfer Data to Your RTX 3090 Machine
 
@@ -92,7 +92,7 @@ Then open http://localhost:6006 in your browser to see:
 - Validation loss
 - Word Error Rate (WER)
 
-## ⚙️ RTX 3090 Optimizations
+## RTX 3090 Optimizations
 
 The script is already optimized for 3090 (24GB VRAM):
 
@@ -117,7 +117,7 @@ BATCH_SIZE = 16  # or 8
 GRADIENT_ACCUMULATION_STEPS = 2  # Maintains effective batch size
 ```
 
-## 📊 What to Expect
+## What to Expect
 
 ### During Training:
 ```
@@ -133,7 +133,7 @@ Step 2000: loss=0.12, wer=12.7%
 - **After fine-tuning**: ~10-20% WER
 - **Improvement**: 3-4x more accurate!
 
-## 💾 After Training
+## After Training
 
 The model will be saved to `./whisper-georgian-finetuned/`
 
@@ -161,14 +161,14 @@ python 3_transcribe.py --audio your_audio.mp3
 python 4_gradio_app.py
 ```
 
-## 🎯 Recommended Workflow
+## Recommended Workflow
 
 1. **Start with whisper-small** (8-12 hours)
 2. **Evaluate results** on test set
-3. **If accuracy is good enough**: Done! ✓
+3. **If accuracy is good enough**: Done! done
 4. **If you need better**: Train whisper-medium (20-30 hours)
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### CUDA Out of Memory
 ```python
@@ -186,7 +186,7 @@ BATCH_SIZE = 16  # or 8
 - Should start decreasing after ~500 steps
 - If stuck, try increasing learning rate to 2e-5
 
-## 📈 Tips for Best Results
+## Tips for Best Results
 
 1. **Let it train for all 3 epochs** - Don't stop early
 2. **Monitor WER** - Should decrease steadily
@@ -198,4 +198,4 @@ BATCH_SIZE = 16  # or 8
 After training completes:
 1. Test the model: `python 3_transcribe.py --audio test.mp3`
 2. Launch web interface: `python 4_gradio_app.py`
-3. Celebrate! You now have a Georgian speech-to-text model! 🎉
+3. Celebrate! You now have a Georgian speech-to-text model! 

@@ -22,21 +22,21 @@ AUDIO_DIR = Path("cv-corpus-23.0-2025-09-05/ka/clips")
 # Find first audio file
 audio_files = list(AUDIO_DIR.glob("*.mp3"))
 if not audio_files:
-    print("❌ Error: No audio files found!")
+    print("ERROR: Error: No audio files found!")
     print(f"   Looking in: {AUDIO_DIR}")
     sys.exit(1)
 
 test_audio = audio_files[0]
-print(f"\n✓ Found {len(audio_files)} audio files")
-print(f"✓ Testing with: {test_audio.name}")
+print(f"\nOK: Found {len(audio_files)} audio files")
+print(f"OK: Testing with: {test_audio.name}")
 
 # Load model
-print(f"\n⏳ Loading Whisper {MODEL_SIZE} model...")
+print(f"\nLoading: Loading Whisper {MODEL_SIZE} model...")
 model = whisper.load_model(MODEL_SIZE)
-print("✓ Model loaded!")
+print("OK: Model loaded!")
 
 # Transcribe
-print("\n⏳ Transcribing (this may take 10-30 seconds)...")
+print("\nLoading: Transcribing (this may take 10-30 seconds)...")
 result = model.transcribe(
     str(test_audio),
     language="ka",  # Georgian
@@ -67,9 +67,9 @@ if train_tsv.exists():
 
         # Simple accuracy check
         if result['text'].strip().lower() == ground_truth.strip().lower():
-            print("\n✓ Perfect match!")
+            print("\nOK: Perfect match!")
         else:
-            print("\n⚠ Not an exact match (this is normal)")
+            print("\nWARNING: Not an exact match (this is normal)")
             print("  Fine-tuning will improve accuracy significantly!")
 
 # Test a few more files
@@ -77,13 +77,13 @@ print("\n\nTesting 3 more samples...")
 for i, audio_file in enumerate(audio_files[1:4], 1):
     print(f"\n{i}. {audio_file.name}")
     result = model.transcribe(str(audio_file), language="ka", verbose=False)
-    print(f"   → {result['text']}")
+    print(f"   ->{result['text']}")
 
 print("\n" + "="*60)
-print("✓ Test complete!")
+print("OK: Test complete!")
 print("\nNext steps:")
-print("1. If the transcriptions look reasonable → Great!")
-print("2. To improve accuracy → Fine-tune on your data")
-print("3. On Mac → Use Google Colab (see COLAB_TRAINING.ipynb)")
-print("4. With GPU → Run: python 2_finetune_whisper.py")
+print("1. If the transcriptions look reasonable ->Great!")
+print("2. To improve accuracy ->Fine-tune on your data")
+print("3. On Mac ->Use Google Colab (see COLAB_TRAINING.ipynb)")
+print("4. With GPU ->Run: python 2_finetune_whisper.py")
 print("="*60)

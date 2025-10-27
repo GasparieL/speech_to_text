@@ -1,22 +1,22 @@
 # Georgian Speech-to-Text - START HERE
 
-## 🎯 Overview
+## Overview
 
 You have **146 hours of Georgian speech + transcriptions** and want to build a speech-to-text system.
 
 **Solution:** Fine-tune OpenAI's Whisper model on your data.
 
-## 📦 What You Have
+## What You Have
 
-✓ Dataset: Mozilla Common Voice Georgian v23.0 (227,211 audio files)
-✓ Training files created and optimized for RTX 3090
-✓ All scripts ready to go
+- Dataset: Mozilla Common Voice Georgian v23.0 (227,211 audio files)
+- Training files created and optimized for RTX 3090
+- All scripts ready to go
 
-## ⚡ You Have an RTX 3090!
+## You Have an RTX 3090!
 
 **Great news!** Training will take **8-12 hours** (for whisper-small model).
 
-## 🚀 Quick Start (3 Steps)
+## Quick Start (3 Steps)
 
 ### Step 1: Package Everything (On Mac)
 ```bash
@@ -37,7 +37,7 @@ python 2_finetune_whisper.py
 
 **That's it!** Come back in 8-12 hours.
 
-## 📚 Files Guide
+## Files Guide
 
 | File | Purpose |
 |------|---------|
@@ -51,7 +51,7 @@ python 2_finetune_whisper.py
 | [requirements.txt](requirements.txt) | Python dependencies |
 | package_for_training.sh | Packages everything for transfer |
 
-## ⏱️ Timeline
+## Timeline
 
 1. **Package files**: 5-10 minutes
 2. **Transfer to RTX 3090**: 10-30 minutes (depends on method)
@@ -60,7 +60,7 @@ python 2_finetune_whisper.py
 5. **Transfer model back**: 5 minutes
 6. **Ready to use!**
 
-## 🎓 What You'll Get
+## What You'll Get
 
 **Before fine-tuning** (pre-trained Whisper):
 - Word Error Rate: ~40-60%
@@ -71,7 +71,7 @@ python 2_finetune_whisper.py
 - Output: Accurate Georgian transcription!
 - **3-4x improvement!**
 
-## 💡 Model Size Guide
+## Model Size Guide
 
 Edit line 23 in [2_finetune_whisper.py:23](2_finetune_whisper.py#L23):
 
@@ -79,13 +79,13 @@ Edit line 23 in [2_finetune_whisper.py:23](2_finetune_whisper.py#L23):
 # Pick one:
 MODEL_NAME = "openai/whisper-tiny"    # 2-3h training, good accuracy
 MODEL_NAME = "openai/whisper-base"    # 4-6h training, better accuracy
-MODEL_NAME = "openai/whisper-small"   # 8-12h training, excellent ⭐
+MODEL_NAME = "openai/whisper-small"   # 8-12h training, excellent (recommended)
 MODEL_NAME = "openai/whisper-medium"  # 20-30h training, best accuracy
 ```
 
 **Recommendation:** Start with `whisper-small` for best balance.
 
-## 🖥️ After Training - Using the Model
+## After Training - Using the Model
 
 ### Command line:
 ```bash
@@ -114,13 +114,13 @@ transcription = processor.batch_decode(predicted_ids, skip_special_tokens=True)[
 print(transcription)
 ```
 
-## 🆘 Need Help?
+## Need Help?
 
 1. **Setup questions?** → See [QUICK_START_RTX3090.md](QUICK_START_RTX3090.md)
 2. **Detailed setup?** → See [SETUP_RTX3090.md](SETUP_RTX3090.md)
 3. **Problems during training?** → Check "Troubleshooting" section in SETUP_RTX3090.md
 
-## ✅ Ready to Start?
+## Ready to Start?
 
 **Run this now on your Mac:**
 ```bash
@@ -130,4 +130,4 @@ cd /Users/lana/Desktop/speech_to_text
 
 Then follow [QUICK_START_RTX3090.md](QUICK_START_RTX3090.md)!
 
-Good luck! 🚀
+Good luck!

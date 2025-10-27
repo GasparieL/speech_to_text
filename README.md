@@ -2,14 +2,14 @@
 
 Fine-tune OpenAI's Whisper model on Georgian speech data for accurate transcription.
 
-## 📁 Dataset
+## Dataset
 - **Source**: Mozilla Common Voice Georgian (v23.0)
 - **Size**: ~146 hours of speech
 - **Structure**:
   - Audio files in `cv-corpus-23.0-2025-09-05/ka/clips/`
   - Transcriptions in `train.tsv`, `test.tsv`, `dev.tsv`
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Step 1: Install Dependencies
 ```bash
@@ -58,7 +58,7 @@ To create a public link:
 python 4_gradio_app.py --share
 ```
 
-## 📝 Usage Examples
+## Usage Examples
 
 ### Transcribe a single file
 ```python
@@ -91,7 +91,7 @@ for audio_file in audio_dir.glob("*.mp3"):
     print(f"{audio_file.name}: {transcription}")
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### Model Size Options
 Edit `MODEL_NAME` in `2_finetune_whisper.py`:
@@ -113,14 +113,14 @@ If you get out of memory errors:
 2. Use smaller model (`whisper-tiny` or `whisper-base`)
 3. Increase `GRADIENT_ACCUMULATION_STEPS` to 2 or 4
 
-## 📊 Monitoring Training
+## Monitoring Training
 
 View training progress with TensorBoard:
 ```bash
 tensorboard --logdir ./whisper-georgian-finetuned/runs
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Out of Memory
 ```python
@@ -137,14 +137,14 @@ Check that the path to `cv-corpus-23.0-2025-09-05/ka/clips/` is correct.
 - Use a larger model (`medium` or `large-v3`)
 - Ensure your audio quality is good
 
-## 📈 Expected Results
+## Expected Results
 
 After fine-tuning on 146 hours of Georgian speech:
 - **Word Error Rate (WER)**: 10-20% (depends on model size)
 - Pre-trained Whisper without fine-tuning: ~30-40% WER
 - Your fine-tuned model should be **2-3x more accurate**!
 
-## 🎯 Next Steps
+## Next Steps
 
 1. **Test the pre-trained model first** (before fine-tuning):
    ```python
@@ -160,7 +160,7 @@ After fine-tuning on 146 hours of Georgian speech:
 
 4. **Deploy** using the Gradio interface or API
 
-## 📚 Files Overview
+## Files Overview
 
 - `requirements.txt` - Python dependencies
 - `1_prepare_data.ipynb` - Explore and prepare dataset
@@ -168,11 +168,11 @@ After fine-tuning on 146 hours of Georgian speech:
 - `3_transcribe.py` - Command-line transcription
 - `4_gradio_app.py` - Web interface for transcription
 
-## 🤝 Contributing
+## Contributing
 
 Feel free to modify the scripts for your needs!
 
-## 📄 License
+## License
 
 This project uses OpenAI's Whisper model and Mozilla Common Voice data.
 Check their respective licenses for usage terms.
