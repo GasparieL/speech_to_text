@@ -1,0 +1,6 @@
+# Dataset files only (too large for GitHub)
+cv-corpus-*/
+mcv-scripted-ka-*.tar.gz
+
+# OS
+.DS_Store
